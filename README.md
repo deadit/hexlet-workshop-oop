@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 ##
 [![Hexlet Ltd. logo](https://raw.githubusercontent.com/Hexlet/hexletguides.github.io/master/images/hexlet_logo128.png)](https://ru.hexlet.io/pages/about?utm_source=github&utm_medium=link&utm_campaign=nodejs-package)
 
@@ -22,6 +21,3 @@ $ make install
 ```sh
 $ make test
 ```
-=======
-# oop4-hexlet
->>>>>>> f6c40dd2b59a05dcdebbb7f8cd9a6a45287f24db
