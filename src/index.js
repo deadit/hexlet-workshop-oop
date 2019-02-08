@@ -1,4 +1,4 @@
 import 'source-map-support/register';
-import half from './half';
+import getGeoInfo from './getGeoInfo';
 
-export default half;
+export default getGeoInfo;

@@ -1,5 +1,18 @@
 #!/usr/bin/env node
+import getGeoInfo from '..';
+import program from 'commander';
 
-import half from '..';
+let cmdValue = '';
+program
+  .version('0.1.0')
+  .arguments('<ip>')
+  .action(function (ip) {
+    const result = ip.match("([0-9]{1,3}[\.]){3}[0-9]{1,3}");
+    if (result) {
+      cmdValue = result[0];
+    }
+  });
 
-console.log(half(Number(process.argv[process.argv.length - 1])));
+program.parse(process.argv);
+
+getGeoInfo(cmdValue);
