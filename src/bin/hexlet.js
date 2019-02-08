@@ -4,7 +4,6 @@ import program from 'commander';
 
 let cmdValue = '';
 program
-  .version('0.1.0')
   .arguments('<ip>')
   .action(function (ip) {
     const result = ip.match("([0-9]{1,3}[\.]){3}[0-9]{1,3}");
@@ -15,4 +14,4 @@ program
 
 program.parse(process.argv);
 
-getGeoInfo(cmdValue);
+console.log(getGeoInfo(cmdValue));
