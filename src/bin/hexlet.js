@@ -1,17 +1,10 @@
 #!/usr/bin/env node
-import getGeoInfo from '..';
-import program from 'commander';
+import geoInfoClient from '../geoInfoClient';
+import geoInfoApi from '../geoInfoApi';
+import geoInfo from '../geoInfo';
 
-let cmdValue = '';
-program
-  .arguments('<ip>')
-  .action(function (ip) {
-    const result = ip.match("([0-9]{1,3}[\.]){3}[0-9]{1,3}");
-    if (result) {
-      cmdValue = result[0];
-    }
-  });
+const [, , cmdValue] = process.argv;
 
-program.parse(process.argv);
-
-console.log(getGeoInfo(cmdValue));
+geoInfo(geoInfoClient('axios'), geoInfoApi('http://ip-api.com/json/', cmdValue)).then(
+  ({ data: { city } }) => console.log(city),
+);

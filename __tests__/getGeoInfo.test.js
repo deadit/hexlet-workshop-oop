@@ -1,6 +1,10 @@
-import getGeoInfo from '../src';
+import geoInfo from '../src/geoInfo';
+import geoInfoApi from '../src/geoInfoApi';
 
-test('getGeoInfo', async () => {
-  const result = await getGeoInfo('123.123.23.23');
-  expect(result).toBe('Beijing');
+describe('geoInfo', () => {
+  it('geoInfo', () => {
+    const geoInfoClient = link => link;
+    const api = geoInfoApi('my.ru/', '123.123.123.123');
+    expect(geoInfo(geoInfoClient, api)).toBe('my.ru/123.123.123.123');
+  });
 });

@@ -1,4 +1,4 @@
 import 'source-map-support/register';
-import getGeoInfo from './getGeoInfo';
+import getGeoInfo from './geoInfoApi';
 
 export default getGeoInfo;
