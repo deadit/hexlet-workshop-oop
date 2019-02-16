@@ -1,8 +1,17 @@
 import httpClient from './httpClient';
 import getLink from './getLink';
 
-export default (client = httpClient('axios'), link = 'http://ip-api.com/json/', ip = '') => {
-  const link = getLink(link, ip);
-  return client(link);
+export default class {
+  constructor(client, link) {
+    this.httpClient = client || httpClient('axios');
+    this.link = link || 'http://ip-api.com/json/';
+  }
+
+  getLink(ip) {
+    return getLink(this.link, ip);
+  }
+
+  get(ip = '') {
+    return this.httpClient(this.getLink(ip));
+  }
 }
-httpClient('axios'), getLink(, cmdValue);

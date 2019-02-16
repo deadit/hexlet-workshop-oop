@@ -1,10 +1,12 @@
 #!/usr/bin/env node
-import httpClient from '../httpClient';
-import getLink from '../getLink';
-import geoInfo from '../geoInfo';
+import GeoInfo from '../GeoInfo';
 
-const [, , cmdValue] = process.argv;
+const [, , ip] = process.argv;
+const getCity = async () => {
+  const geoInfo = new GeoInfo();
+  const data = await geoInfo.get(ip);
 
-geoInfo(httpClient('axios'), getLink('', cmdValue)).then(
-  ({ data: { city } }) => console.log(city),
-);
+  console.log(data.data.city);
+};
+
+getCity();

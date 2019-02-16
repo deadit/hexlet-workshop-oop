@@ -1,10 +1,9 @@
-import geoInfo from '../src/geoInfo';
-import getLink from '../src/getLink';
+import GeoInfo from '../src/GeoInfo';
 
 describe('geoInfo', () => {
   it('geoInfo', () => {
     const geoInfoClient = link => link;
-    const api = getLink('my.ru/', '123.123.123.123');
-    expect(geoInfo(geoInfoClient, api)).toBe('my.ru/123.123.123.123');
+    const link = 'my.ru/';
+    expect(new GeoInfo(geoInfoClient, link).get('')).toBe('my.ru');
   });
 });
