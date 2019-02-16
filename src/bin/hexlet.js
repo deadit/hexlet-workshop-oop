@@ -5,6 +5,6 @@ import geoInfo from '../geoInfo';
 
 const [, , cmdValue] = process.argv;
 
-geoInfo(httpClient('axios'), getLink('http://ip-api.com/json/', cmdValue)).then(
+geoInfo(httpClient('axios'), getLink('', cmdValue)).then(
   ({ data: { city } }) => console.log(city),
 );
