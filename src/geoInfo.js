@@ -7,11 +7,7 @@ export default class {
     this.link = link || 'http://ip-api.com/json/';
   }
 
-  getLink(ip) {
-    return getLink(this.link, ip);
-  }
-
-  get(ip = '') {
-    return this.httpClient(this.getLink(ip));
+  getInfoByip(ip = '') {
+    return this.httpClient(getLink(this.link, ip));
   }
 }
