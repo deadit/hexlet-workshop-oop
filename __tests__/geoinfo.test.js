@@ -1,15 +1,16 @@
 import GeoInfo from '../src/GeoInfo';
 
 describe('geoInfo', () => {
-  it('geoInfo', () => {
-    const httpClient = () => ({
-      data: {
-        city: 'Moscow',
-      },
-    });
-
-    const link = 'my.ru';
-    const geoInfo = new GeoInfo(httpClient, link);
-    expect(geoInfo.getInfoByIp('').data.city).toBe('Moscow');
+  it('test response', async () => {
+    const httpClient = {
+      get: () => ({
+        data: {
+          city: 'Moscow',
+        },
+      }),
+    };
+    const geoInfo = new GeoInfo(httpClient);
+    const info = await geoInfo.getInfoByIp('');
+    expect(info.city).toBe('Moscow');
   });
 });

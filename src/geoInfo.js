@@ -1,13 +1,14 @@
-import httpClient from './httpClient';
+import axios from 'axios';
 import getLink from './getLink';
 
 export default class {
   constructor(client, link) {
-    this.httpClient = client || httpClient('axios');
+    this.httpClient = client || axios;
     this.link = link || 'http://ip-api.com/json/';
   }
 
-  getInfoByIp(ip = '') {
-    return this.httpClient(getLink(this.link, ip));
+  async getInfoByIp(ip = '') {
+    const response = await this.httpClient.get(getLink(this.link, ip));
+    return response.data;
   }
 }
