@@ -4,9 +4,9 @@ import GeoInfo from '../GeoInfo';
 const [, , ip] = process.argv;
 const getCity = async () => {
   const geoInfo = new GeoInfo();
-  const data = await geoInfo.getInfoByIp(ip);
+  const response = await geoInfo.getInfoByIp(ip);
 
-  console.log(data.data.city);
+  console.log(response.data.city);
 };
 
 getCity();
