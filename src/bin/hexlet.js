@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-import GeoInfo from '../GeoInfo';
+import GeoInfo from '../geo/GeoInfo';
 
 const [, , ip] = process.argv;
 const getCity = async () => {

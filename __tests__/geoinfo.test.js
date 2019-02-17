@@ -1,4 +1,4 @@
-import GeoInfo from '../src/GeoInfo';
+import GeoInfo from '../src/geo/GeoInfo';
 
 describe('geoInfo', () => {
   it('test response', async () => {
